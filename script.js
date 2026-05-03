@@ -28,12 +28,12 @@ window.addEventListener('scroll', () => {
 /* ══════════════════════════════════════════
    LIGHTBOX
 ══════════════════════════════════════════ */
-const lightbox   = document.getElementById('lightbox');
-const lbImg      = document.getElementById('lightbox-img');
-const lbCounter  = document.getElementById('lightbox-counter');
-const lbClose    = document.getElementById('lightbox-close');
-const lbPrev     = document.getElementById('lightbox-prev');
-const lbNext     = document.getElementById('lightbox-next');
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+const lbCounter = document.getElementById('lightbox-counter');
+const lbClose = document.getElementById('lightbox-close');
+const lbPrev = document.getElementById('lightbox-prev');
+const lbNext = document.getElementById('lightbox-next');
 
 const slideList = Array.from(slides);
 let currentSlide = 0;
@@ -101,11 +101,15 @@ lightbox.addEventListener('touchend', (e) => {
 /* ══════════════════════════════════════════
    SIDE PANEL (Supplementary PDFs — view only)
 ══════════════════════════════════════════ */
-const panel      = document.getElementById('side-panel');
+const panel = document.getElementById('side-panel');
 const panelTitle = document.getElementById('side-panel-title');
-const panelPdf   = document.getElementById('side-panel-pdf');
+const panelPdf = document.getElementById('side-panel-pdf');
 
 function openPanel(title, pdfUrl) {
+  if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    window.open(pdfUrl, '_blank');
+    return;
+  }
   panelTitle.textContent = title;
   panelPdf.src = pdfUrl + '#toolbar=0&navpanes=0';
   panel.classList.add('open');
