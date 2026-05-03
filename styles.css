@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --bg: #0c0c0c;
   --surface: #141414;
