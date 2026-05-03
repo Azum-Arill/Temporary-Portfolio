@@ -347,6 +347,8 @@ body::after {
   transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
   overflow: hidden;
   font-family: var(--font-sans);
+  text-decoration: none;
+  color: inherit;
 }
 
 .paper-card:hover {
