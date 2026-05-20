@@ -362,6 +362,25 @@ body::after {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
+.paper-card--disabled,
+.paper-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.paper-card--disabled:hover,
+.paper-card:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+}
+
+.paper-card--disabled .paper-card-footer,
+.paper-card:disabled .paper-card-footer {
+  color: var(--text-sec);
+}
+
 .paper-card-body {
   padding: 24px 24px 20px;
   flex: 1;
